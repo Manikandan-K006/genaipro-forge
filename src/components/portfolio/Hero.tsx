@@ -122,7 +122,7 @@ export function Hero() {
                 aria-label={label}
                 className="group grid h-11 w-11 place-items-center rounded-full glass transition hover:scale-110 hover:bg-white/10"
               >
-                <Icon className="h-4.5 w-4.5 text-muted-foreground transition group-hover:text-foreground" />
+                <Icon className="h-4 w-4 text-muted-foreground transition group-hover:text-foreground" />
               </a>
             ))}
           </div>

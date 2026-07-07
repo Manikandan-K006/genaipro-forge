@@ -13,6 +13,7 @@ import { Blog } from "@/components/portfolio/Blog";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { Chatbot } from "@/components/portfolio/Chatbot";
+import { VisitorCounter } from "@/components/portfolio/VisitorCounter";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -56,6 +57,7 @@ function Index() {
       </main>
       <Footer />
       <Chatbot />
+      <VisitorCounter />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

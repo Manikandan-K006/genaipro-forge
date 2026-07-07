@@ -1,23 +1,64 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { NeuralBg } from "@/components/portfolio/NeuralBg";
+import { Navbar } from "@/components/portfolio/Navbar";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Skills } from "@/components/portfolio/Skills";
+import { Projects } from "@/components/portfolio/Projects";
+import { Timeline } from "@/components/portfolio/Timeline";
+import { Education } from "@/components/portfolio/Education";
+import { Certificates, Research, Achievements } from "@/components/portfolio/CertsResearch";
+import { GitHubSection } from "@/components/portfolio/GitHubSection";
+import { Blog } from "@/components/portfolio/Blog";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
+import { Chatbot } from "@/components/portfolio/Chatbot";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Manikandan K",
+    jobTitle: "Generative AI Engineer",
+    email: "mailto:manidvkit@gmail.com",
+    url: "https://github.com/Manikandan-K006",
+    sameAs: [
+      "https://github.com/Manikandan-K006",
+      "https://www.linkedin.com/in/manikandan-k-0162062b1",
+      "https://instagram.com/its_mani06",
+    ],
+    alumniOf: "Mount Zion College of Engineering and Technology",
+    address: { "@type": "PostalAddress", addressLocality: "Sivaganga", addressRegion: "Tamil Nadu", addressCountry: "IN" },
+    knowsAbout: ["Generative AI", "LLMs", "RAG", "Prompt Engineering", "Machine Learning", "Full Stack Development"],
+  };
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+    <div className="relative min-h-screen text-foreground overflow-x-hidden">
+      <NeuralBg />
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Timeline />
+        <Education />
+        <Certificates />
+        <Research />
+        <Achievements />
+        <GitHubSection />
+        <Blog />
+        <Contact />
+      </main>
+      <Footer />
+      <Chatbot />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
     </div>
   );

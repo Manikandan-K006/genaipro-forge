@@ -74,6 +74,13 @@ export type Database = {
     }
     Functions: {
       claim_admin_if_none: { Args: never; Returns: boolean }
+      get_visitor_trend: {
+        Args: { _days?: number }
+        Returns: {
+          day: string
+          visits: number
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

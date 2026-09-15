@@ -20,23 +20,28 @@ export function About() {
             I'm <span className="text-foreground font-medium">Manikandan K</span>, an
             Information Technology undergraduate at Mount Zion College of Engineering
             and Technology (Sivaganga, Tamil Nadu). I'm passionate about solving
-            real-world problems through Artificial Intelligence.
+            real-world problems through Artificial Intelligence, and I am learning and
+            upskilling every day in the skills that matter most in this field, including
+            Generative AI, LLMs, RAG, prompt engineering, AI security, and product
+            development.
           </p>
           <h3 className="mt-8 text-2xl font-semibold">My mission</h3>
           <p className="mt-3 text-muted-foreground leading-relaxed">
             To develop intelligent, sustainable, and eco-friendly AI systems that
-            improve people's lives. I continuously explore Generative AI, LLMs,
-            Prompt Engineering, Machine Learning, and Full-Stack Development while
-            contributing to research and open-source projects.
+            improve people's lives while also building secure and trustworthy
+            intelligent products. I am constantly learning and upskilling every day
+            in Generative AI, LLMs, Prompt Engineering, Machine Learning,
+            Full-Stack Development, and AI Security Engineering, while contributing
+            to research and open-source projects.
           </p>
           <h3 className="mt-8 text-2xl font-semibold">My vision</h3>
           <p className="mt-3 text-muted-foreground leading-relaxed">
-            AI should be <span className="text-foreground">ethical, accessible, scalable, and impactful</span>.
-            My goal is to join a world-class AI team and ship products that change
-            how humans live and learn.
+            AI should be <span className="text-foreground">ethical, accessible, scalable, secure, and impactful</span>.
+            My goal is to join a world-class AI and security-focused team and ship
+            products that change how humans live, learn, and trust technology.
           </p>
           <div className="mt-8 flex flex-wrap gap-2 text-xs">
-            {["LLMs", "RAG", "AI Agents", "Prompt Engineering", "Vector DBs", "ML Research"].map((t) => (
+            {["LLMs", "RAG", "AI Agents", "Prompt Engineering", "Vector DBs", "AI Security", "ML Research"].map((t) => (
               <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-muted-foreground">
                 {t}
               </span>

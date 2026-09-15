@@ -1,0 +1,42 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="100" y1="50" x2="700" y2="750" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07142B"/>
+      <stop offset="0.45" stop-color="#1B1D4F"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="130" y1="120" x2="650" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6EE7FF"/>
+      <stop offset="0.5" stop-color="#C084FC"/>
+      <stop offset="1" stop-color="#F472B6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(410 200) rotate(90) scale(420 340)">
+      <stop stop-color="#7DD3FC" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#A78BFA" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#0F172A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <circle cx="400" cy="400" r="312" fill="url(#glow)"/>
+  <circle cx="400" cy="400" r="302" stroke="url(#ring)" stroke-width="12" opacity="0.9"/>
+
+  <g opacity="0.9">
+    <circle cx="250" cy="180" r="16" fill="#5EEAD4"/>
+    <circle cx="590" cy="620" r="14" fill="#F472B6"/>
+    <circle cx="650" cy="250" r="8" fill="#7DD3FC"/>
+  </g>
+
+  <g>
+    <ellipse cx="400" cy="640" rx="150" ry="90" fill="#111827" opacity="0.72"/>
+    <circle cx="400" cy="300" r="118" fill="#E9D5FF"/>
+    <path d="M286 650C301 550 347 490 400 490C453 490 499 550 514 650H286Z" fill="#E9D5FF"/>
+    <path d="M341 276C341 240 368 212 400 212C432 212 459 240 459 276V314C459 349 432 376 400 376C368 376 341 349 341 314V276Z" fill="#1F2937"/>
+    <path d="M325 288C338 229 370 186 400 186C430 186 462 229 475 288C465 269 445 254 400 254C355 254 335 269 325 288Z" fill="#0F172A"/>
+    <path d="M318 300C328 259 357 226 400 226C443 226 472 259 482 300C483 330 474 344 457 368C443 387 422 398 400 398C378 398 357 387 343 368C326 344 317 330 318 300Z" fill="#1F2937"/>
+    <circle cx="374" cy="300" r="8" fill="#F8FAFC"/>
+    <circle cx="426" cy="300" r="8" fill="#F8FAFC"/>
+    <path d="M370 336C383 352 392 357 400 357C408 357 417 352 430 336" stroke="#F8FAFC" stroke-width="7" stroke-linecap="round"/>
+    <path d="M340 430C350 476 374 510 400 510C426 510 450 476 460 430" stroke="#9CA3AF" stroke-width="18" stroke-linecap="round" opacity="0.45"/>
+  </g>
+</svg>

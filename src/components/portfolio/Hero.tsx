@@ -135,18 +135,33 @@ export function Hero() {
         {/* Avatar orb */}
         <div className="relative mx-auto aspect-square w-full max-w-md animate-float">
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-neon-blue via-neon-purple to-neon-cyan blur-3xl opacity-40" />
-          <div className="relative h-full w-full rounded-full glass-strong neon-border overflow-hidden">
+          <div className="relative h-full w-full overflow-hidden rounded-full glass-strong neon-border">
             <div className="absolute inset-0 grid-bg opacity-50" />
             <div className="absolute inset-6 rounded-full bg-gradient-to-br from-neon-blue/30 via-transparent to-neon-purple/30" />
-            <div className="absolute inset-0 grid place-items-center">
-              <div className="text-center">
-                <div className="text-8xl font-bold text-gradient">MK</div>
-                <div className="mt-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                  gen · ai · engineer
+
+            <div className="absolute inset-0">
+              <img
+                src="/profile-photo.svg"
+                alt="Manikandan K"
+                className="h-full w-full object-cover scale-105 transition duration-700 ease-out group-hover:scale-110"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  target.style.display = "none";
+                  const fallback = target.nextElementSibling as HTMLElement | null;
+                  if (fallback) fallback.style.display = "grid";
+                }}
+              />
+
+              <div className="absolute inset-0 hidden place-items-center bg-[radial-gradient(circle_at_center,_rgba(56,189,248,0.2),_rgba(125,211,252,0.08),_rgba(15,23,42,0.55)_70%)]">
+                <div className="text-center">
+                  <div className="text-8xl font-bold text-gradient">MK</div>
+                  <div className="mt-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                    gen · ai · engineer
+                  </div>
                 </div>
               </div>
             </div>
-            {/* Orbits */}
+
             <div className="absolute inset-0 animate-[spin_28s_linear_infinite]">
               <div className="absolute left-1/2 top-0 h-3 w-3 -translate-x-1/2 rounded-full bg-neon-cyan shadow-[0_0_20px_var(--neon-cyan)]" />
             </div>

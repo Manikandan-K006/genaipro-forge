@@ -92,15 +92,19 @@ export function Hero() {
               <Send className="h-4 w-4" /> Contact Me
             </a>
             <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+              href="/Manikandan-K-ATS-Resume.pdf"
+              download="Manikandan-K-ATS-Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full glass px-5 py-3 text-sm font-medium transition hover:bg-white/10"
             >
               <FileText className="h-4 w-4" /> ATS Resume
             </a>
             <a
-              href="#"
-              onClick={(e) => e.preventDefault()}
+              href="/Manikandan-K-Modern-Resume.pdf"
+              download="Manikandan-K-Modern-Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full glass px-5 py-3 text-sm font-medium transition hover:bg-white/10"
             >
               <Download className="h-4 w-4" /> Modern Resume

@@ -24,7 +24,15 @@ const projects = [
 ];
 
 export function Projects() {
-  const [activeCaseStudy, setActiveCaseStudy] = useState<string | null>(null);
+  const [activeCaseStudy, setActiveCaseStudy] = useState<string | null>("isds");
+
+  const handleCaseStudyClick = (id: string) => {
+    setActiveCaseStudy(id);
+    const element = document.getElementById(`${id}-case-study`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <>
@@ -77,8 +85,8 @@ export function Projects() {
                   </a>
                   <button
                     type="button"
-                    onClick={() => setActiveCaseStudy(activeCaseStudy === id ? null : id)}
-                    className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm transition hover:bg-white/10"
+                    onClick={() => handleCaseStudyClick(id)}
+                    className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-neon-blue to-neon-purple px-4 py-2 text-sm font-medium text-white shadow-lg shadow-neon-blue/20 transition hover:scale-105"
                   >
                     <FileText className="h-4 w-4" /> Case Study
                   </button>
@@ -90,8 +98,12 @@ export function Projects() {
       </Section>
 
       {activeCaseStudy === "isds" && (
-        <section id="isds-case-study" className="relative px-6 pb-24">
-          <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-sm">
+        <section
+          id="isds-case-study"
+          className="relative px-6 pb-24 animate-[fadeIn_0.25s_ease-out]"
+          style={{ animation: "fadeIn 0.25s ease-out" }}
+        >
+          <div className="mx-auto max-w-6xl rounded-3xl border border-neon-blue/20 bg-gradient-to-br from-white/8 to-white/3 p-8 shadow-[0_0_40px_rgba(94,234,212,0.12)] backdrop-blur-sm ring-1 ring-white/10">
             <div className="mb-6">
               <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1 text-xs font-mono uppercase tracking-widest text-muted-foreground">
                 <span className="h-1 w-1 rounded-full bg-neon-cyan" /> Case Study

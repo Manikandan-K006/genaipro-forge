@@ -141,7 +141,7 @@ export function Hero() {
 
             <div className="absolute inset-0">
               <img
-                src="/profile-photo.svg"
+                src="/profile-photo.png"
                 alt="Manikandan K"
                 className="h-full w-full object-cover scale-105 transition duration-700 ease-out group-hover:scale-110"
                 onError={(e) => {

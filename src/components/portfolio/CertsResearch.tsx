@@ -4,19 +4,53 @@ import { Award, BookOpen, FlaskConical, Trophy, Sparkles } from "lucide-react";
 export function Certificates() {
   return (
     <Section id="certificates" eyebrow="Certificates" title="Credentials & Learning">
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="glass rounded-2xl p-6 transition hover:-translate-y-1 hover:bg-white/10">
-            <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-neon-blue/30 to-neon-purple/30">
-              <Award className="h-5 w-5 text-neon-cyan" />
+      <div className="mx-auto max-w-4xl">
+        <div className="glass-strong rounded-3xl p-8 shadow-2xl ring-1 ring-white/10">
+          <div className="flex items-center gap-4">
+            <div className="grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-neon-blue/30 to-neon-purple/30">
+              <Award className="h-6 w-6 text-neon-cyan" />
             </div>
-            <div className="mt-4 font-semibold">Coming soon</div>
-            <div className="text-sm text-muted-foreground">
-              Certification placeholder — Generative AI · LLMs · MLOps.
+            <div>
+              <div className="font-mono text-[11px] uppercase tracking-[0.28em] text-muted-foreground">Current focus</div>
+              <h3 className="mt-2 text-2xl font-semibold">Generative AI, LLMs, and applied machine learning</h3>
             </div>
-            <div className="mt-3 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">2026 · pending</div>
           </div>
-        ))}
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-black/10 p-5">
+              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Learning path</div>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Building strong foundations in model behavior, prompt design, retrieval pipelines, and production-ready AI workflows.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/10 bg-black/10 p-5">
+              <div className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted-foreground">Status</div>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Ongoing learning and practical implementation across AI systems, automation, and modern full-stack application development.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            {[
+              "Generative AI",
+              "LLMs",
+              "Prompt Engineering",
+              "Retrieval Augmented Generation",
+              "MLOps",
+              "Applied ML",
+              "AI Product Thinking",
+            ].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-mono text-muted-foreground"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </Section>
   );

@@ -1,5 +1,5 @@
 import { Section } from "./Section";
-import { Award, BookOpen, FlaskConical, Trophy, Sparkles } from "lucide-react";
+import { Award, BookOpen, Brain, FlaskConical, Trophy, Sparkles } from "lucide-react";
 
 export function Certificates() {
   return (
@@ -62,9 +62,11 @@ export function Research() {
     { Icon: BookOpen, t: "Prompt Engineering", d: "Structured prompting, evaluation, and optimization." },
     { Icon: FlaskConical, t: "AI Agents", d: "Tool-use, multi-agent orchestration, and memory design." },
     { Icon: Trophy, t: "Machine Learning", d: "Foundational ML with applied experiments." },
+    { Icon: Brain, t: "Cognitive Neuroscience", d: "Exploring attention, memory, learning mechanisms, and human decision-making." },
+    { Icon: Brain, t: "Psychology Research", d: "Interested in behavioral patterns, cognition, and interdisciplinary AI-human insight models." },
   ];
   return (
-    <Section id="research" eyebrow="Research" title="Current AI Research" subtitle="Where I'm going deep.">
+    <Section id="research" eyebrow="Research" title="Research Interests" subtitle="Where I'm going deep.">
       <div className="grid gap-5 md:grid-cols-2">
         {areas.map(({ Icon, t, d }) => (
           <div key={t} className="glass rounded-2xl p-6">
@@ -78,9 +80,9 @@ export function Research() {
           </div>
         ))}
         <div className="md:col-span-2 glass-strong neon-border rounded-2xl p-6 text-center">
-          <div className="font-mono text-xs uppercase tracking-widest text-neon-cyan">Future publications</div>
+          <div className="font-mono text-xs uppercase tracking-widest text-neon-cyan">Current focus</div>
           <p className="mt-2 text-muted-foreground">
-            Working toward research write-ups on efficient RAG pipelines and lightweight agent architectures.
+            Working on a research paper exploring cognitive neuroscience, human learning behavior, and how AI can model attention, memory, and decision-making more effectively.
           </p>
         </div>
       </div>

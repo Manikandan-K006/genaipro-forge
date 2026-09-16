@@ -1,5 +1,5 @@
 import { Section } from "./Section";
-import { ExternalLink, Github, FileText, Bot, GraduationCap } from "lucide-react";
+import { ExternalLink, Github, FileText, GraduationCap } from "lucide-react";
 
 const projects = [
   {
@@ -15,25 +15,9 @@ const projects = [
       "Production-ready architecture",
     ],
     stack: ["React", "TypeScript", "Vite", "Tailwind", "TanStack Router", "Supabase", "Drizzle ORM"],
-    github: "https://github.com/Manikandan-K006",
+    github: "https://github.com/Manikandan-K006/ISDS",
     demo: "#",
     accent: "from-neon-blue to-neon-cyan",
-  },
-  {
-    Icon: Bot,
-    title: "AI Voice Assistant",
-    description:
-      "A conversational AI assistant with voice interaction, offline LLM support via Ollama, and smart automation using OpenAI + Python speech pipelines.",
-    features: [
-      "Voice interaction",
-      "AI conversation",
-      "Offline LLM support (Ollama)",
-      "Smart automation",
-    ],
-    stack: ["Python", "OpenAI API", "Ollama", "Speech Recognition", "Prompt Engineering", "ML"],
-    github: "https://github.com/Manikandan-K006",
-    demo: "#",
-    accent: "from-neon-purple to-neon-pink",
   },
 ];
 

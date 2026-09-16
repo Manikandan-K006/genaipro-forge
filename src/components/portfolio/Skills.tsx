@@ -3,37 +3,51 @@ import { Code2, Cpu, Database, Palette, Wrench, Sparkles } from "lucide-react";
 
 const groups = [
   {
-    Icon: Code2, title: "Programming",
-    items: ["Python", "Java", "JavaScript", "TypeScript", "HTML", "CSS"],
+    Icon: Code2,
+    title: "Languages & Core Concepts",
+    items: ["Python", "Java", "JavaScript", "TypeScript", "HTML", "CSS", "Data Structures", "OOP"],
   },
   {
-    Icon: Palette, title: "Frontend",
-    items: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+    Icon: Palette,
+    title: "Frontend Engineering",
+    items: ["React", "Next.js", "Tailwind CSS", "Responsive UI", "Component Design", "Framer Motion"],
   },
   {
-    Icon: Database, title: "Backend",
-    items: ["Node.js", "Express.js", "MongoDB", "Supabase", "Drizzle ORM"],
+    Icon: Database,
+    title: "Backend & APIs",
+    items: ["Node.js", "Express.js", "MongoDB", "Supabase", "REST APIs", "Drizzle ORM", "Authentication"],
   },
   {
-    Icon: Sparkles, title: "Artificial Intelligence",
+    Icon: Sparkles,
+    title: "AI & Applied Intelligence",
     items: [
-      "Machine Learning", "Generative AI", "Prompt Engineering", "LLMs",
-      "OpenAI API", "Ollama", "RAG", "AI Agents", "Vector Databases", "Prompt Optimization",
+      "Machine Learning",
+      "Generative AI",
+      "Prompt Engineering",
+      "LLMs",
+      "OpenAI API",
+      "Ollama",
+      "RAG",
+      "AI Agents",
+      "Vector Databases",
+      "Prompt Optimization",
     ],
   },
   {
-    Icon: Wrench, title: "Developer Tools",
-    items: ["Git", "GitHub", "VS Code", "Vite", "Firebase", "Docker (learning)", "Linux"],
+    Icon: Wrench,
+    title: "Tooling & Workflow",
+    items: ["Git", "GitHub", "VS Code", "Vite", "Firebase", "Docker", "Linux", "CI/CD"],
   },
   {
-    Icon: Cpu, title: "Currently Learning",
-    items: ["LangGraph", "LlamaIndex", "PyTorch", "MLOps", "CUDA basics"],
+    Icon: Cpu,
+    title: "Exploring & Expanding",
+    items: ["LangGraph", "LlamaIndex", "PyTorch", "MLOps", "CUDA Fundamentals"],
   },
 ];
 
 export function Skills() {
   return (
-    <Section id="skills" eyebrow="Skills" title="Tech Stack & Toolbox" subtitle="From LLM orchestration to production full-stack.">
+    <Section id="skills" eyebrow="Skills" title="Tech Stack & Toolkit" subtitle="Building across product, AI systems, and full-stack experiences.">
       <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {groups.map(({ Icon, title, items }) => (
           <div key={title} className="group glass rounded-2xl p-6 transition hover:-translate-y-1 hover:bg-white/10">

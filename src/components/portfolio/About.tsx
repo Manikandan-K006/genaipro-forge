@@ -14,10 +14,10 @@ export function About() {
   return (
     <Section id="about" eyebrow="About" title="Aspiring Generative AI Engineer" subtitle="Building intelligent, sustainable, and impactful AI.">
       <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] items-start">
-        <div className="glass-strong neon-border rounded-3xl p-8 sm:p-10 animate-reveal">
-          <h3 className="text-2xl font-semibold">Who I am</h3>
-          <p className="mt-3 text-muted-foreground leading-relaxed">
-            I'm <span className="text-foreground font-medium">Manikandan K</span>, an
+        <div className="bg-[#07120F] border border-[#173B31] rounded-3xl p-8 sm:p-10 shadow-[0_15px_40px_rgba(0,0,0,0.25)] animate-reveal">
+          <h3 className="text-2xl font-semibold text-[#F8FAFC]">Who I am</h3>
+          <p className="mt-3 text-[#CBD5E1] leading-relaxed">
+            I'm <span className="text-[#34D399] font-medium">Manikandan K</span>, an
             Information Technology undergraduate at Mount Zion College of Engineering
             and Technology (Sivaganga, Tamil Nadu). I'm passionate about solving
             real-world problems through Artificial Intelligence, and I am learning and
@@ -25,8 +25,8 @@ export function About() {
             Generative AI, LLMs, RAG, prompt engineering, AI security, and product
             development.
           </p>
-          <h3 className="mt-8 text-2xl font-semibold">My mission</h3>
-          <p className="mt-3 text-muted-foreground leading-relaxed">
+          <h3 className="mt-8 text-2xl font-semibold text-[#F8FAFC]">My mission</h3>
+          <p className="mt-3 text-[#CBD5E1] leading-relaxed">
             To develop intelligent, sustainable, and eco-friendly AI systems that
             improve people's lives while also building secure and trustworthy
             intelligent products. I am constantly learning and upskilling every day
@@ -34,15 +34,15 @@ export function About() {
             Full-Stack Development, and AI Security Engineering, while contributing
             to research and open-source projects.
           </p>
-          <h3 className="mt-8 text-2xl font-semibold">My vision</h3>
-          <p className="mt-3 text-muted-foreground leading-relaxed">
-            AI should be <span className="text-foreground">ethical, accessible, scalable, secure, and impactful</span>.
+          <h3 className="mt-8 text-2xl font-semibold text-[#F8FAFC]">My vision</h3>
+          <p className="mt-3 text-[#CBD5E1] leading-relaxed">
+            AI should be <span className="text-[#34D399] font-medium">ethical, accessible, scalable, secure, and impactful</span>.
             My goal is to join a world-class AI and security-focused team and ship
             products that change how humans live, learn, and trust technology.
           </p>
           <div className="mt-8 flex flex-wrap gap-2 text-xs">
             {["LLMs", "RAG", "AI Agents", "Prompt Engineering", "Vector DBs", "AI Security", "ML Research"].map((t) => (
-              <span key={t} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-muted-foreground">
+              <span key={t} className="rounded-full border border-[#173B31] bg-[#0B1714] px-3 py-1 font-mono text-[#94A3B8]">
                 {t}
               </span>
             ))}
@@ -52,14 +52,14 @@ export function About() {
           {pillars.map(({ Icon, title, text }, i) => (
             <div
               key={title}
-              className="glass rounded-2xl p-5 transition hover:-translate-y-1 hover:bg-white/10"
+              className="bg-[#0E1C18] border border-[#173B31] rounded-2xl p-5 transition-all duration-200 hover:-translate-y-1 hover:bg-[#12251F] hover:border-[#10B981]"
               style={{ animationDelay: `${i * 80}ms` }}
             >
-              <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-neon-blue/30 to-neon-purple/30">
-                <Icon className="h-5 w-5 text-neon-cyan" />
+              <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#0B1714] border border-[#173B31]">
+                <Icon className="h-5 w-5 text-[#34D399]" />
               </div>
-              <div className="mt-4 font-semibold">{title}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{text}</div>
+              <div className="mt-4 font-semibold text-[#F8FAFC]">{title}</div>
+              <div className="mt-1 text-sm text-[#94A3B8]">{text}</div>
             </div>
           ))}
         </div>
@@ -67,3 +67,4 @@ export function About() {
     </Section>
   );
 }
+

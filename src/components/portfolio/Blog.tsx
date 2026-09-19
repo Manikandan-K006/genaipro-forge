@@ -19,19 +19,20 @@ export function Blog() {
             key={p.title}
             href="#"
             onClick={(e) => e.preventDefault()}
-            className="group glass rounded-2xl p-6 transition hover:-translate-y-1 hover:bg-white/10"
+            className="group bg-[#0E1C18] border border-[#173B31] rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:bg-[#12251F] hover:border-[#10B981] shadow-[0_15px_40px_rgba(0,0,0,0.25)]"
           >
             <div className="flex items-center justify-between">
-              <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-[11px] font-mono uppercase tracking-widest text-neon-cyan">
+              <span className="rounded-full border border-[#173B31] bg-[#0B1714] px-2.5 py-0.5 text-[11px] font-mono uppercase tracking-widest text-[#34D399]">
                 {p.cat}
               </span>
-              <ArrowUpRight className="h-4 w-4 text-muted-foreground transition group-hover:text-foreground group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <ArrowUpRight className="h-4 w-4 text-[#64748B] transition-all duration-200 group-hover:text-[#34D399] group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </div>
-            <h3 className="mt-4 font-semibold leading-snug">{p.title}</h3>
-            <div className="mt-3 text-xs text-muted-foreground">{p.read} read · Coming soon</div>
+            <h3 className="mt-4 font-semibold leading-snug text-[#F8FAFC] group-hover:text-[#34D399] transition-colors">{p.title}</h3>
+            <div className="mt-3 text-xs text-[#94A3B8]">{p.read} read · Coming soon</div>
           </a>
         ))}
       </div>
     </Section>
   );
 }
+

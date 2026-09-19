@@ -70,7 +70,6 @@ export function VisitorCounter() {
   const today = trend.at(-1)?.visits ?? 0;
   const week = useMemo(() => trend.reduce((s, r) => s + r.visits, 0), [trend]);
 
-  // Tiny sparkline SVG (7 bars)
   const max = Math.max(1, ...trend.map((r) => r.visits));
   const bars = trend.length ? trend : Array.from({ length: 7 }, () => ({ day: "", visits: 0 }));
 
@@ -80,56 +79,56 @@ export function VisitorCounter() {
         onClick={() => setOpen((v) => !v)}
         aria-expanded={open}
         aria-label="Toggle visitor stats"
-        className={`glass-strong neon-border flex items-center gap-3 rounded-full px-4 py-2.5 transition-all ${
-          bumped ? "scale-110 shadow-[0_0_30px_var(--neon-cyan)]" : ""
+        className={`flex items-center gap-3 rounded-full bg-[#07120F] border border-[#10B981] px-4 py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-[#34D399] ${
+          bumped ? "scale-110 shadow-[0_0_30px_rgba(16,185,129,0.5)]" : ""
         }`}
       >
-        <div className="relative grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-neon-blue to-neon-purple">
-          <Eye className="h-4 w-4 text-white" />
+        <div className="relative grid h-8 w-8 place-items-center rounded-full bg-[#0B1714] border border-[#173B31]">
+          <Eye className="h-4 w-4 text-[#10B981]" />
           <span className="absolute -top-0.5 -right-0.5 flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-neon-cyan opacity-75" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-neon-cyan" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#34D399] opacity-75" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#34D399]" />
           </span>
         </div>
         <div className="leading-tight text-left">
-          <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground flex items-center gap-1">
-            <Users className="h-3 w-3" /> Live visitors
+          <div className="font-mono text-[10px] uppercase tracking-widest text-[#94A3B8] flex items-center gap-1">
+            <Users className="h-3 w-3 text-[#34D399]" /> Live visitors
           </div>
-          <div className="font-mono text-sm font-semibold tabular-nums text-gradient">
+          <div className="font-mono text-sm font-semibold tabular-nums text-[#34D399]">
             {count === null ? "···" : count.toLocaleString()}
           </div>
         </div>
       </button>
 
       {open && (
-        <div className="mt-2 w-64 glass-strong neon-border rounded-2xl p-4 animate-in fade-in slide-in-from-bottom-2">
+        <div className="mt-2 w-64 rounded-2xl border border-[#173B31] bg-[#07120F] p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] animate-in fade-in slide-in-from-bottom-2 backdrop-blur-xl">
           <div className="grid grid-cols-2 gap-2 mb-3">
-            <div className="rounded-lg border border-border/60 bg-background/40 px-3 py-2">
-              <div className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
+            <div className="rounded-lg border border-[#173B31] bg-[#0B1714] px-3 py-2">
+              <div className="font-mono text-[9px] uppercase tracking-widest text-[#64748B]">
                 Today
               </div>
-              <div className="font-mono text-lg font-semibold tabular-nums text-gradient">
+              <div className="font-mono text-lg font-semibold tabular-nums text-[#34D399]">
                 {today.toLocaleString()}
               </div>
             </div>
-            <div className="rounded-lg border border-border/60 bg-background/40 px-3 py-2">
-              <div className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground">
+            <div className="rounded-lg border border-[#173B31] bg-[#0B1714] px-3 py-2">
+              <div className="font-mono text-[9px] uppercase tracking-widest text-[#64748B]">
                 7-day
               </div>
-              <div className="font-mono text-lg font-semibold tabular-nums text-gradient">
+              <div className="font-mono text-lg font-semibold tabular-nums text-[#34D399]">
                 {week.toLocaleString()}
               </div>
             </div>
           </div>
 
-          <div className="font-mono text-[9px] uppercase tracking-widest text-muted-foreground mb-1.5">
+          <div className="font-mono text-[9px] uppercase tracking-widest text-[#64748B] mb-1.5">
             Last 7 days
           </div>
           <svg viewBox="0 0 140 44" className="w-full h-12" preserveAspectRatio="none">
             <defs>
               <linearGradient id="vcBar" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="oklch(0.85 0.18 200)" />
-                <stop offset="100%" stopColor="oklch(0.55 0.22 280)" />
+                <stop offset="0%" stopColor="#34D399" />
+                <stop offset="100%" stopColor="#047857" />
               </linearGradient>
             </defs>
             {bars.map((b, i) => {
@@ -152,7 +151,7 @@ export function VisitorCounter() {
               );
             })}
           </svg>
-          <div className="flex justify-between font-mono text-[9px] text-muted-foreground mt-1">
+          <div className="flex justify-between font-mono text-[9px] text-[#64748B] mt-1">
             {bars.map((b, i) => (
               <span key={i}>
                 {b.day
@@ -166,3 +165,4 @@ export function VisitorCounter() {
     </div>
   );
 }
+

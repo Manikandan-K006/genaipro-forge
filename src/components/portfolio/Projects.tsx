@@ -24,7 +24,7 @@ const projects = [
 ];
 
 export function Projects() {
-  const [activeCaseStudy, setActiveCaseStudy] = useState<string | null>("isds");
+  const [activeCaseStudy, setActiveCaseStudy] = useState<string | null>(null);
 
   const handleCaseStudyClick = (id: string) => {
     setActiveCaseStudy(id);

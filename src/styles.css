@@ -201,3 +201,25 @@
   animation: grid-move 20s linear infinite;
 }
 
+/* Hide any host-injected Lovable branding, badges, or watermarks */
+#lovable-badge,
+[id*="lovable"],
+[class*="lovable-badge"],
+[class*="lovable_badge"],
+[data-lovable-badge],
+[data-lovable],
+a[href*="lovable.dev"],
+a[href*="lovable.app"],
+a[href*="lovable.ai"],
+iframe[src*="lovable"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+

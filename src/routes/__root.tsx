@@ -131,9 +131,50 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const purgeLovableElements = () => {
+      const selectors = [
+        "#lovable-badge",
+        '[id*="lovable"]',
+        '[class*="lovable"]',
+        '[data-lovable]',
+        'a[href*="lovable.dev"]',
+        'a[href*="lovable.app"]',
+        'a[href*="lovable.ai"]',
+        'iframe[src*="lovable"]',
+      ];
+      document.querySelectorAll(selectors.join(",")).forEach((node) => {
+        if (node && node.parentNode) {
+          node.parentNode.removeChild(node);
+        }
+      });
+
+      // Target fixed/absolute bottom badges injected by preview wrappers
+      document.querySelectorAll("body > div, body > a").forEach((node) => {
+        if (
+          node instanceof HTMLElement &&
+          (node.innerText?.toLowerCase().includes("lovable") ||
+            node.innerHTML?.toLowerCase().includes("lovable.dev"))
+        ) {
+          node.remove();
+        }
+      });
+    };
+
+    purgeLovableElements();
+    const observer = new MutationObserver(purgeLovableElements);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
     </QueryClientProvider>
   );
 }
+

@@ -43,11 +43,11 @@ export function NeuralBg() {
     // 1. Define Multiverse Network Topology (Proportional Ratios)
     const rawNodes: NodeDef[] = [
       // Central Timeline
-      { id: "root", xRatio: 0.1, yRatio: 0.25, isMain: true },
-      { id: "c1", xRatio: 0.25, yRatio: 0.35, isMain: true },
+      { id: "root", xRatio: 0.08, yRatio: 0.28, isMain: true },
+      { id: "c1", xRatio: 0.25, yRatio: 0.36, isMain: true },
       { id: "c2", xRatio: 0.45, yRatio: 0.3, isMain: true },
-      { id: "c3", xRatio: 0.65, yRatio: 0.4, isMain: true },
-      { id: "c4", xRatio: 0.85, yRatio: 0.35, isMain: true },
+      { id: "c3", xRatio: 0.65, yRatio: 0.42, isMain: true },
+      { id: "c4", xRatio: 0.88, yRatio: 0.35, isMain: true },
 
       // Upper Multiverse Branch Family A
       { id: "a1", xRatio: 0.35, yRatio: 0.15 },
@@ -55,14 +55,14 @@ export function NeuralBg() {
       { id: "a3", xRatio: 0.75, yRatio: 0.18 },
 
       // Lower Multiverse Branch Family B
-      { id: "b1", xRatio: 0.3, yRatio: 0.6 },
-      { id: "b2", xRatio: 0.5, yRatio: 0.72 },
-      { id: "b3", xRatio: 0.7, yRatio: 0.65 },
+      { id: "b1", xRatio: 0.3, yRatio: 0.62 },
+      { id: "b2", xRatio: 0.5, yRatio: 0.75 },
+      { id: "b3", xRatio: 0.72, yRatio: 0.68 },
 
       // Far Outer Branches C & D
-      { id: "c1_sub", xRatio: 0.62, yRatio: 0.85 },
-      { id: "c2_sub", xRatio: 0.82, yRatio: 0.82 },
-      { id: "d1_sub", xRatio: 0.88, yRatio: 0.15 },
+      { id: "c1_sub", xRatio: 0.62, yRatio: 0.88 },
+      { id: "c2_sub", xRatio: 0.84, yRatio: 0.84 },
+      { id: "d1_sub", xRatio: 0.9, yRatio: 0.15 },
     ];
 
     const rawBranches: BranchDef[] = [
@@ -76,14 +76,14 @@ export function NeuralBg() {
       { fromId: "c1", toId: "a1", cpRatioX: 0.28, cpRatioY: 0.2 },
       { fromId: "a1", toId: "a2" },
       { fromId: "a2", toId: "a3" },
-      { fromId: "a3", toId: "c4", cpRatioX: 0.8, cpRatioY: 0.25 }, // Reconnects!
+      { fromId: "a3", toId: "c4", cpRatioX: 0.82, cpRatioY: 0.25 }, // Reconnects!
       { fromId: "a2", toId: "d1_sub" },
 
       // Major Branch B (Lower)
-      { fromId: "c1", toId: "b1", cpRatioX: 0.26, cpRatioY: 0.5 },
+      { fromId: "c1", toId: "b1", cpRatioX: 0.26, cpRatioY: 0.52 },
       { fromId: "b1", toId: "b2" },
       { fromId: "b2", toId: "b3" },
-      { fromId: "b3", toId: "c4", cpRatioX: 0.78, cpRatioY: 0.5 }, // Reconnects!
+      { fromId: "b3", toId: "c4", cpRatioX: 0.8, cpRatioY: 0.52 }, // Reconnects!
 
       // Sub-branches C
       { fromId: "b1", toId: "c1_sub" },

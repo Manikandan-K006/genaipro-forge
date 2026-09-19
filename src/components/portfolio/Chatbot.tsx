@@ -112,13 +112,19 @@ export function Chatbot() {
 
       {open && (
         <div className="fixed bottom-24 right-5 z-40 w-[92vw] max-w-sm glass-strong neon-border rounded-2xl overflow-hidden animate-reveal">
-          <div className="flex items-center gap-3 border-b border-white/10 p-4">
+          <div className="flex items-center justify-between gap-3 border-b border-white/10 p-4">
             <div className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-neon-blue to-neon-purple">
               <Sparkles className="h-4 w-4 text-white" />
             </div>
             <div>
               <div className="text-sm font-semibold">Ask Manikandan's AI</div>
               <div className="text-[11px] text-muted-foreground">Trained on this portfolio</div>
+            </div>
+            <div className="flex items-center gap-2">
+              {loading && (
+                <div className="text-xs text-muted-foreground animate-pulse">Thinking…</div>
+              )}
+              <div className="rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-mono text-muted-foreground">Powered by LLM</div>
             </div>
           </div>
           <div className="max-h-80 overflow-y-auto p-4 space-y-3">
@@ -144,11 +150,13 @@ export function Chatbot() {
               onKeyDown={(e) => e.key === "Enter" && send()}
               placeholder="Ask about projects, skills…"
               className="flex-1 rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm outline-none focus:border-neon-blue/50"
+              disabled={loading}
             />
             <button
               onClick={send}
               aria-label="Send"
               className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-neon-blue to-neon-purple text-white hover:scale-105 transition"
+              disabled={loading}
             >
               <Send className="h-4 w-4" />
             </button>

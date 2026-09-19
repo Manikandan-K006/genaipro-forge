@@ -61,17 +61,38 @@ export function Chatbot() {
   const [msgs, setMsgs] = useState<Msg[]>([
     { role: "bot", text: "Hi! I'm Manikandan's AI assistant. Ask me anything about his portfolio." },
   ]);
+  const [loading, setLoading] = useState(false);
   const endRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [msgs, open]);
 
-  const send = () => {
+  const send = async () => {
     const q = input.trim();
     if (!q) return;
     setInput("");
     setMsgs((m) => [...m, { role: "user", text: q }]);
-    setTimeout(() => setMsgs((m) => [...m, { role: "bot", text: answer(q) }]), 400);
+    setLoading(true);
+    try {
+      const res = await fetch("/api/ai", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ question: q }),
+      });
+      if (!res.ok) {
+        // fallback to local rule-based answers
+        const fallback = answer(q);
+        setMsgs((m) => [...m, { role: "bot", text: fallback }]);
+      } else {
+        const data = await res.json();
+        const botText = data.answer ?? answer(q);
+        setMsgs((m) => [...m, { role: "bot", text: botText }]);
+      }
+    } catch (err) {
+      setMsgs((m) => [...m, { role: "bot", text: answer(q) }]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

@@ -58,15 +58,15 @@ export function Certificates() {
 
 export function Research() {
   const areas = [
-    { Icon: Sparkles, t: "Large Language Models", d: "Studying reasoning, alignment, and efficient fine-tuning." },
-    { Icon: BookOpen, t: "Prompt Engineering", d: "Structured prompting, evaluation, and optimization." },
-    { Icon: FlaskConical, t: "AI Agents", d: "Tool-use, multi-agent orchestration, and memory design." },
-    { Icon: Trophy, t: "Machine Learning", d: "Foundational ML with applied experiments." },
-    { Icon: Brain, t: "Cognitive Neuroscience", d: "Exploring attention, memory, learning mechanisms, and human decision-making." },
-    { Icon: Brain, t: "Psychology Research", d: "Interested in behavioral patterns, cognition, and interdisciplinary AI-human insight models." },
+    { Icon: Sparkles, t: "Large Language Models", d: "Studying reasoning, alignment, RAG optimization, and model fine-tuning." },
+    { Icon: BookOpen, t: "Prompt Engineering & RAG", d: "Structured prompting, context retrieval, and evaluation benchmarks." },
+    { Icon: FlaskConical, t: "AI Agents", d: "Tool-use, multi-agent orchestration, and persistent memory systems." },
+    { Icon: Trophy, t: "Machine Learning", d: "Supervised & unsupervised learning with hands-on code implementations." },
+    { Icon: Brain, t: "Cognitive Science & AI (Future Goal)", d: "Aspirations to explore how cognitive learning mechanisms and human decision-making inform next-gen AI architectures." },
+    { Icon: BookOpen, t: "Interdisciplinary Research", d: "Combining deep technical reading as a bibliophile with applied software engineering." },
   ];
   return (
-    <Section id="research" eyebrow="Research" title="Research Interests" subtitle="Where I'm going deep.">
+    <Section id="research" eyebrow="Research" title="Research Interests & Future Horizons" subtitle="Active technical focus areas and long-term interdisciplinary growth goals.">
       <div className="grid gap-5 md:grid-cols-2">
         {areas.map(({ Icon, t, d }) => (
           <div key={t} className="bg-[#0E1C18] border border-[#173B31] rounded-2xl p-6 transition-all duration-200 hover:-translate-y-1 hover:bg-[#12251F] hover:border-[#10B981]">
@@ -80,9 +80,9 @@ export function Research() {
           </div>
         ))}
         <div className="md:col-span-2 bg-[#07120F] border border-[#173B31] rounded-2xl p-6 text-center shadow-lg">
-          <div className="font-mono text-xs uppercase tracking-widest text-[#34D399] font-medium">Current focus</div>
+          <div className="font-mono text-xs uppercase tracking-widest text-[#34D399] font-medium">Growth Horizon for Recruiters</div>
           <p className="mt-2 text-[#CBD5E1]">
-            Working on a research paper exploring cognitive neuroscience, human learning behavior, and how AI can model attention, memory, and decision-making more effectively.
+            Currently focused on shipping production-ready LLM & RAG applications, with long-term aspirations to bridge cognitive science and advanced AI architectures as I grow in the AI field.
           </p>
         </div>
       </div>
